@@ -371,9 +371,116 @@ bits, or swapping from 0 to 1 or from 1 to 0.
 
 ## Chapter 9. ASCII table
 
+ASCII stands for **American Standard Code for Information Interchange**.
+Computers can only understand numbers, so an ASCII code is the numerical
+representation of a character such as 'a' or '@' or an action of some sort.
+ASCII was developed a long time ago and now the non-printing characters are
+rarely used for their original purpose(teletype machines). The original ASCII
+code consisted of 128 Characters of printable and non-printable device control
+codes. Each was represented by a seven bit binary code with values ranging from
+decimal 0 through 127.
+
+**Hint**: every ASCII character can be represented by a 3 digit decimal number!
+
+The following ASCII Table shows you the convesion from a decimal valu to a
+character value.
+
+    Dec  Char                           Dec  Char     Dec  Char     Dec  Char
+    ---------                           ---------     ---------     ----------
+      0  NUL (null)                      32  SPACE     64  @         96  `
+      1  SOH (start of heading)          33  !         65  A         97  a
+      2  STX (start of text)             34  "         66  B         98  b
+      3  ETX (end of text)               35  #         67  C         99  c
+      4  EOT (end of transmission)       36  $         68  D        100  d
+      5  ENQ (enquiry)                   37  %         69  E        101  e
+      6  ACK (acknowledge)               38  &         70  F        102  f
+      7  BEL (bell)                      39  '         71  G        103  g
+      8  BS  (backspace)                 40  (         72  H        104  h
+      9  TAB (horizontal tab)            41  )         73  I        105  i
+     10  LF  (NL line feed, new line)    42  *         74  J        106  j
+     11  VT  (vertical tab)              43  +         75  K        107  k
+     12  FF  (NP form feed, new page)    44  ,         76  L        108  l
+     13  CR  (carriage return)           45  -         77  M        109  m
+     14  SO  (shift out)                 46  .         78  N        110  n
+     15  SI  (shift in)                  47  /         79  O        111  o
+     16  DLE (data link escape)          48  0         80  P        112  p
+     17  DC1 (device control 1)          49  1         81  Q        113  q
+     18  DC2 (device control 2)          50  2         82  R        114  r
+     19  DC3 (device control 3)          51  3         83  S        115  s
+     20  DC4 (device control 4)          52  4         84  T        116  t
+     21  NAK (negative acknowledge)      53  5         85  U        117  u
+     22  SYN (synchronous idle)          54  6         86  V        118  v
+     23  ETB (end of trans. block)       55  7         87  W        119  w
+     24  CAN (cancel)                    56  8         88  X        120  x
+     25  EM  (end of medium)             57  9         89  Y        121  y
+     26  SUB (substitute)                58  :         90  Z        122  z
+     27  ESC (escape)                    59  ;         91  [        123  {
+     28  FS  (file separator)            60  <         92  \        124  |
+     29  GS  (group separator)           61  =         93  ]        125  }
+     30  RS  (record separator)          62  >         94  ^        126  ~
+     31  US  (unit separator)            63  ?         95  _        127  DEL
+
+So any letter in the alphabet can be represented by a numeric value. For example,
+capital B s 66 while a lowercase I is 105.
+
 ## Chapter 10. Hashing and Encryption
 
+A *cryptographic hash function* is a special class of [hash function](https://en.wikipedia.org/wiki/Hash_function) that has certain properties which make it suitable for use in [cryptography](https://en.wikipedia.org/wiki/Cryptography).
+
+It is a mathematical algorithm that maps data of arbitrary size to a bit string
+of a fixed size (a [hash function](https://en.wikipedia.org/wiki/Hash_function))
+which is usually designed to also be a one-way function, that is, a function
+which is infeasible to invert. The only way to recreate the input data from an
+ideal cryptographic hash function's output is to attempt a brute-force search
+of possible inputs to see if they produce a match, or use a "rainbow table" of
+matched hashes. [Bruce Schneier](https://en.wikipedia.org/wiki/Bruce_Schneier)
+has called one-way hash functions "the workhorses of modern cryptography".[[1](https://en.wikipedia.org/wiki/Cryptographic_hash_function#cite_note-1)].
+
+The input data is often called the message, and the output (the hash value or
+hash) is often called the message digest or simply the digest.  The hash routine
+you will be using for this challenge is neither one-way nor is it difficult to
+crack by serious security professionals. This hash routine is only intended to
+introduce you to the concepts of obscuring sensitive data by encryption and
+character data represented by transformed numeric, binary, or unreadable
+characters in a file, while providing an interesting assignment to challenge
+a new programmer to think about his code.
+
+The challenge routine simply obscures the clear text data by using the following
+process:
+
+1. Converting each character of the text data into a 3 digit integer equivalent
+   from the ASCII tables chr to decimal chart.
+2. Adding 128 to the converted ASCII code
+3. Performing an *exclusive or* operation (XOR) on each character’s ASCII code
+   with the number 99.
+4. Converting the integer decimal value to a 3 character string representing
+   the same numeric value.
+5. Writing the 3 character string values consecutively to the encrypted file
+   for each character in the original clear text.
+
+To decrypt the data again, simply perform the previous steps in exactly the
+reverse order. You will know if you have successfully decrypted the file if
+you produce readable text that makes some sense and does not appear jumbled.
+
+
 ## Chapter 11. The Secret.in file
+
+Download the [Secret.in](Secret.in) file. This file contains the encrypted
+information that you must decode. If you open it in notepad (or any other text
+editor) it looks like rows and rows of numbers. The secret text you are trying
+to decode is hidden from plain view by encoding the letters of the text into
+numbers so that they cannot be read without decoding them with the same routine
+that was used to encode them.
+
+In the `Secret.in` file, each letter, space, and punctuation are represented by
+a 3-digit code. The first 3 numbers, 183, represent the first letter of the message.
+The next 3 numbers, 139, represent the next letter, and so on and so on through
+the end of the file. In the chapter on [Hashing and Encryption](#chapter-10-hashing-and-encryption),
+we explained how to decode these numbers so that the secret text can be read.
+Be careful not to save over or modify the `Secret.in` file as that could
+scramble the code. If you think you may have altered it, you can always download
+it again.
+
 
 ## Chapter 12. The Results.out file
 
