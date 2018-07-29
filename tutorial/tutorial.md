@@ -15,20 +15,20 @@ complete beginner, if you follow this guide.
 
 ## Contents
 
-1. Chapter 1. Sign Up with CS50 edX and set up your IDE environment.
-2. Chapter 2. Python Language Syntax (code formatting rules)
-3. Chapter 3. Python data and variables (numbers, letters, and such)
-4. Chapter 4. Python operators
-5. Chapter 5. Flow Control with the If statement (If this is true then do that, otherwise do something else)
-6. Chapter 6. Python Loops (how to repeat something multiple times)
-7. Chapter 7. Python File I/O (Input(reading from) / Output (writing to) a file)
-8. Chapter 8. Python conversion functions (How to change letters to numbers and such)
-9. Chapter 9. ASCII table (numbers that represent letters)
-10. Chapter 10. Hashing and Encryption (How to decode and encrypt data)
-11. Chapter 11. The Secret.in file format (you will read from this)
-12. Chapter 12. The Results.out file format  (you will write to this)
-13. Chapter 13. Sending your results to us (and gloating about your success)
-14. Glossary -  Terms you may want or need to be familiar with…
+1. Chapter 1. [Sign Up with CS50 edX and set up your IDE environment](#chapter-1-sign-up-for-cs50)
+2. Chapter 2. [Python Language Syntax (code formatting rules)](#chapter-2-python-language-syntax)
+3. Chapter 3. [Python data and variables (numbers, letters, and such)](#chapter-3-python-data-and-variables)
+4. Chapter 4. [Python operators](#chapter-4-python-operators)
+5. Chapter 5. [Flow Control with the If statement (If this is true then do that, otherwise do something else)](#chapter-5-if-statements)
+6. Chapter 6. [Python Loops (how to repeat something multiple times)](#chapter-6-loops)
+7. Chapter 7. [Python File I/O (Input(reading from) / Output (writing to) a file)](#chapter-7-file-io)
+8. Chapter 8. [Python conversion functions (How to change letters to numbers and such)](#chapter-8-conversion-functions)
+9. Chapter 9. [ASCII table (numbers that represent letters)](#chapter-9-ascii-table)
+10. Chapter 10. [Hashing and Encryption (How to decode and encrypt data)](#chapter-10-hashing-and-encryption)
+11. Chapter 11. [The Secret.in file format (you will read from this)](#chapter-11-the-secretin-file)
+12. Chapter 12. [The Results.out file format  (you will write to this)](#chapter-12-the-resultsout-file)
+13. Chapter 13. [Sending your results to us (and gloating about your success)](#chapter-13-sending-your-results-to-us)
+14. [Glossary](#glossary) -  Terms you may want or need to be familiar with…
 
 
 ## Chapter 1: Sign up for CS50
@@ -360,3 +360,23 @@ bits, or swapping from 0 to 1 or from 1 to 0.
     a  = 0011 1100
     ~a = 1100 0011
 
+
+## Chapter 5. If statements
+
+## Chapter 6. Loops
+
+## Chapter 7. File I/O
+
+## Chapter 8. Conversion Functions
+
+## Chapter 9. ASCII table
+
+## Chapter 10. Hashing and Encryption
+
+## Chapter 11. The Secret.in file
+
+## Chapter 12. The Results.out file
+
+## Chapter 13. Sending your results to us
+
+## Glossary
