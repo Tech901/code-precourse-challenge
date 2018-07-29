@@ -108,4 +108,4 @@ and your new career as a software developer!
 
 ## Let's get started!
 
-Continue to the [Tutorial](tutorial/tutorial.md)!
+Continue to the [Tutorial](tutorial.md)!
