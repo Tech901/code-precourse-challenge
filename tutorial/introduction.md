@@ -104,3 +104,8 @@ Please feel free to comment on the challenge and your method for completing it.
 
 Good luck with the assignment and we look forward to your success with Code 1.0
 and your new career as a software developer!
+
+
+## Let's get started!
+
+Continue to the [Tutorial](tutorial/tutorial.md)!

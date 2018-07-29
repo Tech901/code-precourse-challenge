@@ -9,5 +9,5 @@ course.
 
 To get started:
 
-1. Read the [Introduction](tutorial/intruction.md)
+1. Read the [Introduction](tutorial/introduction.md)
 2. Start the [Tutorial](tutorial/tutorial.md)
