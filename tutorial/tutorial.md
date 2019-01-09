@@ -27,8 +27,8 @@ complete beginner, if you follow this guide.
 10. Chapter 10. [Hashing and Encryption (How to decode and encrypt data)](#chapter-10-hashing-and-encryption)
 11. Chapter 11. [The Secret.in file format (you will read from this)](#chapter-11-the-secretin-file)
 12. Chapter 12. [The Results.out file format  (you will write to this)](#chapter-12-the-resultsout-file)
-13. Chapter 13. [Sending your results to us (and gloating about your success)](#chapter-13-sending-your-results-to-us)
-14. [Glossary](#glossary) -  Terms you may want or need to be familiar with…
+13. Chapter 13. [A Step-by-step guide](#chapter-13-a-step-by-step-guide)
+14. Chapter 14. [Sending your results to us (and gloating about your success)](#chapter-14-sending-your-results-to-us)
 
 
 ## Chapter 1: Sign up for CS50
@@ -40,7 +40,7 @@ To get started, [Enroll in the the CS50x course at edX.org](https://www.edx.org/
 
 
 
-**NOTE** this section is incomplete... more content coming soon.
+**TODO** this section is incomplete... more content coming soon.
 
 
 ### A brief tour of the CS50 IDE
@@ -521,6 +521,32 @@ it again.
 
 ## Chapter 12. The Results.out file
 
-## Chapter 13. Sending your results to us
+The `Results.out` file is a file that will be created by the Python program you
+write. It will contain the results from your program so that we can determine if
+you have successfully completed the assignment. The first part of the file will
+contain the decoded secret message in clear text that can be directly read in
+notepad or any file viewer (such as the CS50 IDE's editor). After the full clear
+text of the secret message, a coded signature message will follow. This will be
+your email address encoded with the same cipher routine that was used to code the
+original `Secret.in` file that you decoded.
 
-## Glossary
+When we check your `Results.out` file, we should see the decoded secret message
+in clear text, followed by a series of 3 digit numbers. When we decode that message,
+we should see your email address.
+
+## Chapter 13. A Step-by-step guide
+
+## Chapter 14. Sending your results to us
+
+
+Once you have completed the assignment and created the `Results.out` file,
+create an email and attach your `Results.out` file and your `precourse.py` file.
+
+Send the email to: [mailto:Code1support@tech901.org](Code1support@tech901.org).
+The subject line should say “Code1.0 Pre-Course Assignment Results.out”. In the
+body of the email please tell us what you thought of the assignment and give us
+any constructive suggestions to improve it. We'd also love to hear how you
+solved the challenge and if you needed the step by step tutorial or not.
+
+
+**Good Luck!**
