@@ -536,17 +536,300 @@ we should see your email address.
 
 ## Chapter 13. A Step-by-step guide
 
+If you don't need help, then you don't have to read this chapter! Feel free to
+write your program on your own. There are many possible solutions to this assignment.
+What follows is just one possible solution, and it's here if you need a bit of help.
+
+
+**Disclaimer** There may be one or two small mistakes in the example code below.
+See if you can catch them!
+
+### Let's review the challenge instructions
+
+Each character of the original clear text data was hashed by converting the
+character to an integer representing that character from the ASCII table. A
+constant value of 128 was added to that integer and the resulting value was XORed
+with the integer 99. The final resulting integer was converted into a three
+character string and written into the `Secret.in` file. Each three character
+string was written sequentially from beginning to end.
+
+In order to achieve success you must write a Python script in the CS50 IDE to
+decrypt the secret by reversing the hash process described above. You must also
+use the original hash to write your encrypted email address to the end of the
+results file.
+
+Now let's start by breaking down the steps in the process needed to complete
+this program:
+
+1. Read the numbers from the `Secret.in` file.
+2. Examine them 3 at a time.
+3. Convert each of them from a string of 3 numeric characters to an integer value.
+4. XOR the integer value with 99
+5. Subtract 128 from that value
+6. Convert the resulting integer value to a character represented in the ASCII table
+7. Add that single character string to the decoded message string
+8. Repeat steps 2 – 7 until the complete `Secret.in` message has been decoded
+   and written to `Results.out`.
+9. Use the same method to encrypt your email address.
+10. Write your encrypted email address to the end of `Results.out`
+11. Follow the instructions in [Chapter 14](#chapter-14-sending-your-results-to-us)
+    to send your `Results.out` file to Code 1.0 for grading
+
+Now let's walk through the steps require to write Python code (program) to
+perform each step in the process:
+
+First let's make sure your programming environment is ready: Open [https://cs50.io](https://cs50.io)
+in your browser. Create a new tab in the upper File tab window by clicking on
+and selecting *New File*. This will open a new tab called *untitled*. Now in
+the File menu click Save. In the File name: prompt type `precourse.py` and click
+Save. You will now be in a tab called *precourse.py*. You may begin writing and
+editing your program here. Don’t forget to save your program often by clicking
+Save from the File menu or just hold down the `ctrl` key and press `s` for save
+(or `Cmd` + `s` on a Mac). After you save your code you can click on the
+terminal tab and at the Linux `$` prompt type the following to run your code:
+
+    python precourse.py
+
+Press enter, and you  will see your results in the terminal window.
+
+You should put comments in your code so that you and others can understand it
+when they look at it. Remember that anything that comes after a `#` on a line is
+a comment for humans to read and is completely ignored by Python.
+
+At the top of the editor screen start your program with comments to include the
+program’s name and brief descriptive purpose. Always include the programmer's
+name and the date it was created. This should look something like:
+
+    # Program name : precourse.py
+    # Decode a hashed message stored in Secret.in and write the
+    # decoded message into Results.out as part of the Code 1.0 application process.
+    # Created by <your name here> on March 16, 2017
+
+Remember that indentation is important to Python. Keep the same indentation level
+(number of spaces) unless you are creating a block of statements to execute in a
+while or for loop.
+
+### Step 1. Read the numbers from the Secret.in file.
+
+You need to open the file using Python’s open function. The Syntax for opening
+a file object is:
+
+    object = open(file_name [, access_mode])
+
+Your code should look something like:
+
+    secret = open("Secret.in", "r")  # Open the Secret.in file for reading
+
+This will open the `Secret.in` file in read mode and create a file object named
+`secret`. Now you need to read the file data into a variable to work with it.
+Let’s call the variable `coded_text`. We will use Python’s `read()` method to
+read the entire file into a single variable.
+
+The syntax for `read()` method is:
+
+    file_object.read(size)
+
+where size is the number of bytes to read from the file. If size is omitted, then
+the whole file will be read. You will type in something like:
+
+    coded_text = secret.read()
+
+Now the string variable `coded_text` contains the entire contents of `Secret.in`.
+
+We will need a string variable to contain the decoded message. Let's define
+a variable that contains an empty string; something like:
+
+    message = "" # initialize the message variable
+
+We no longer need the file so let’s close it by typing: `secret.close()`. Now we
+need to write our decoded data to `Results.out`. We will again use the open
+function but with the `"w"` mode for writing:
+
+    results = open("Results.out", "w")  # open file Results.out for writing
+
+### Step 2. Examine the coded values 3 at a time.
+
+Since the file contained many more than 3 characters, we will need to repeat
+this next section multiple times until we get to the end of the data. To do this
+we will need a loop control structure. There are several ways to do this but let’s
+use a `while()` loop to repeat the execution of our block of statements until
+we run out of data to process. The while loop syntax is:
+
+    while Boolean expression:
+        statements to execute
+
+Note the statements *inside* the while loop are indented 4 spaces.
+
+We need a counter variable as an iterator to keep up with how many times we have
+looped or iterated through the statements in the while loop. It will also
+provide the index pointer value to “slice” up the data in the `coded_text`
+variable into consecutive 3 byte blocks. The letter `i` is often used as a
+numeric iteration counter in loops. We will also use the `len()` function to
+return the length of (number of characters in) `coded_text`. Type something like
+the following to set up the while loop:
+
+    i = 0
+    while i < len(coded_text):
+
+The next block of statements to be repeated by the while loop will be indented
+an additional 4 spaces under the while statement.
+
+### Step 3. Convert each string of 3 numeric characters to an integer value
+
+You need to do several things here to convert the data. First you have to take a
+slice or subset of 3 characters at a time from `coded_text`. As you may remember
+from Chapter 3 on strings, in Python you can use the indexed slice operator,
+whose syntax is `variable_name[s:n]` ,to select `n` characters from a variable
+starting with the `s`th character. So under the while statement we will add code
+to do this:
+
+    i = 0 # initialize the iterator variable to 0
+    while i < len(coded_text): # set up while loop using i to work through coded_text
+        slice_var = codedtext[i:i + 3] # slice_var holds 3 chars of coded_text at a time
+        int_var = int(slice_var)  # converts the text contained in coded_text into an integer
+
+### Step 4. XOR the integer value with 99
+
+Here we need to perform a *bitwise operation* on the group of 8 bits (binary digits)
+that make up the integer value stored in `int_var`. The XOR operator in python
+is the caret symbol: `^`. For example: `result = (v ^ n)`, where `v` is the
+original number whose bits we want to XOR with `n`.
+
+Here we add the following code inside the while loop:
+
+    int_var = (int_var ^ 99) # XOR the value with 99 and store the result back in int_var
+                             # don’t forget to indent 4 spaces...
+
+
+### Step 5. Subtract 128 from that integer value (This is easy!)
+
+    int_var = int_var – 128 # indent 4 spaces...
+
+### Step 6. Convert the resulting integer value to an ASCII character
+
+Now we use the data conversion function `chr()` to convert the integer back to
+a character equivalent from the ASCII table.
+
+    chr_var = chr(intvar)  # Please tell me you remembered to indent 4 spaces!
+
+### Step 7. Add that single character string to the decoded message
+
+In python we can use the `+` operator to *concatenate* strings together. That is,
+we'll append the value in `chr_var` onto the end of our `message`:
+
+    message = message + chrvar
+
+### Step 8. Repeat steps 2 – 8 until the complete Secret.in message has been decoded
+
+Finally, since we're processing three characters at time from the `secret` string,
+we need to add 3 to the while loop iteration variable every time we execute
+the body of the looop. We can use the `+=` operator to add 3 to whatever value
+is stored in `i`:
+
+    i += 3  # Add 3 to the index so we get the next three chrs in coded_text
+
+This is the last statement in the while loop's body. The next statement will
+not be indented *inside* the while loop block.
+
+### Step 9. Write the decoded message text to the Results.out file
+
+We still have the open file object called `results`. We will use the `write()`
+method to write data to the file. The entire message string will be written. We
+will add this statement to the program:
+
+    results.write(message) # write the message string to Results.out (no indent)
+
+Now we will add a new line to make the `Results.out` file more readable when we
+add the next section to it.
+
+    results.write("\n")  # write a newline character to the file, so the next part starts on a new line.
+
+You have finished the first part of the challenge. So far your program should
+look something like this...
+
+    # Program name : precourse.py
+    # Decode a hashed message stored in Secret.in and write the
+    # decoded message into Results.out as part of the Code 1.0 application process.
+    # Created by <your name here> on March 16, 2017
+
+    secret = open("Secret.in", "r")  # Open the Secret.in file for reading
+    message = ""  # initialize the message to an empty string
+    coded_text = secret.read()
+
+    results = open("Results.out", "w")  # open file Results.out for writing
+    i = 0  # initialize the iterator variable to 0
+    while i < len(coded_text):  # set up while loop using i to work through coded_text
+        slice_var = codedtext[i:i+3]  # slice_var holds 3 chars of coded_text at a time
+        int_var = int(slice_var)  # convert to an integer,
+        int_var = (int_var ^ 99)  # XOR with 99
+        int_var = int_var – 128  # subtract 128
+        chr_var = chr(int_var)  # convert back into a character
+
+        message = message + chr_var # build the decoded message string
+        i += 3  # add three to the counter before next loop
+
+    results.write(message) # write the message string to Results.out (no indent)
+    results.write("\n") # write a newline to Results.out so next part starts a new line
+
+Notice the block of indented statements under the while statement. That lets
+Python know they are only to be executed while the condition is true
+
+### Step 10. Use same hash routine to Encrypt your email address.
+
+We will use the same steps as above but in reverse order to create a 3 digit
+encrypted string of numbers for each letter in your email address. Review the
+comments and you should understand the reversible routine from above.
+
+    email = "your-email@address.com"  # create string variable with text to hash
+    coded_text = "" # initialize an empty string to hold your encoded email address
+    i = 0  # re-initialize the iterator variable
+    while i < len(email):  # sets up the while loop using i to work through your email
+        slice_var = email[i] # sets slice_var to hold 1 character of email at a time
+        int_var = ord(slice_var) # converts the character into an ASCII integer value
+        int_var = int_var + 128  # add 128 ASCII code
+        int_var = (int_var ^ 99) # XOR with 99 and store in int_var
+        chr_var = str(intvar)  # convert the integer value into a string
+        coded_text = coded_text + chr_var  # append the encoded string to our coded_text
+        i = i + 1 # increment the counter before next loop
+
+### Step 11. Write your encrypted email address to the end of Results.out
+
+Finally, we'll use the `write()` method again to write the encoded email address
+to the final results file.
+
+    results.write(coded_text)  # write the message string to Results.out (no indent)
+    print("Encoded email written to Results.out")
+    results.close()  # And close the file.
+
+Save your program by going to File Menu and clicking on save (or use Ctrl+S or
+Cmd+S to save the file). Then, run your python program from the Terminal:
+
+    $ python precourse.py
+
+Once this completes successfully, you should see a new file, `Results.out` listed
+in the file pane (to the left of your editor and terminal). You can double-click
+the `Results.out` file to open it in an editor and see the results. If you can
+read the text message and there are three numbers after the message for each
+letter in your email address, Congratulations!
+
+You most likely have successfully completed the challenge.
+
+
 ## Chapter 14. Sending your results to us
 
-
 Once you have completed the assignment and created the `Results.out` file,
-create an email and attach your `Results.out` file and your `precourse.py` file.
+create an email and attach your `Results.out` file and your `precourse.py` to
+that email.
+
+To download your files from the CS50 IDE, **right-click** on `Results.out` in
+the File Pane, then select the Download option. This should transfer the file
+to your computer from the CS50 IDE. Do the same with your `precourse.py` file.
 
 Send the email to: [mailto:Code1support@tech901.org](Code1support@tech901.org).
+
 The subject line should say “Code1.0 Pre-Course Assignment Results.out”. In the
 body of the email please tell us what you thought of the assignment and give us
 any constructive suggestions to improve it. We'd also love to hear how you
 solved the challenge and if you needed the step by step tutorial or not.
-
 
 **Good Luck!**
