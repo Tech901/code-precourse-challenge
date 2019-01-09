@@ -36,11 +36,47 @@ complete beginner, if you follow this guide.
 Much of the Code 1.0 course follows Harvard's CS50 curriculum. Additionally,
 we'll use the online CS50 IDE environment to write and run our code.
 
-To get started, [Enroll in the the CS50x course at edX.org](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x).
+
+### Part 1: Enroll in the CS50 course on edX.org
+
+To get started, [Enroll in the the CS50x course at edX.org](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x).  Look for the big blue "Enroll" button:
+
+![Enroll](images/enroll.jpg)
+
+You will then need to create an account for edX.org. Remember this, as you'll
+need it to log into the course.
+
+![Sign Up for edX](images/sign-up.jpg)
 
 
+Next, select **Audit This Course (No Certificate)**. That makes the content
+freely available for you.
 
-**TODO** this section is incomplete... more content coming soon.
+![Audit this Course](images/audit.jpg)
+
+
+**Important** They'll send you an email to *activate* your account. You **MUST**
+click on the link they sent you in order to continue using edX.
+
+
+### Part 2: Set up your CS50 IDE (programming environment)
+
+Next, we'll set up the programming environment that you'll use throughout the
+course. Visit [CS50.io](https://cs50.io), and choose to login with your edX
+credentials. This is important! You will use your edX username/password to
+log into the CS50 IDE.
+
+![CS50io login](images/cs50ide-login.jpg)
+
+You will then be redirected to edX.org, and asked to Authorize cs50. Select the
+"Allow" button:
+
+![Authorize cs50](images/authorize-edx.jpg)
+
+**Congrats!** You now have access to the CS50 IDE, which powered by a service
+called AWS Cloud9.
+
+You are now ready to work!
 
 
 ### A brief tour of the CS50 IDE
