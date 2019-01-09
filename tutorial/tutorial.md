@@ -43,6 +43,29 @@ To get started, [Enroll in the the CS50x course at edX.org](https://www.edx.org/
 **NOTE** this section is incomplete... more content coming soon.
 
 
+### A brief tour of the CS50 IDE
+
+The programming environment that we will throughout this course is called the
+CS50 IDE. It's a web-based programming environment, and should work well on any
+modern computer: Macs, PCs running Windows or Linux, and even Chromebooks.
+
+![The CS50 IDE](images/CS50_IDE.jpg)
+
+There are three main sections of the CS50 IDE:
+
+1. The **File Pane** lists the files and directories in your workspace.
+2. The **Editor** is a text editor; this is where we will write much of our code.
+3. The **Terminal** gives you access to a Linux command line.
+
+If you accidentally close the Editor or Terminal, you can always reopen them.
+If your CS50 IDE looks different from the screenshot above, never fear! You
+still have access to all the tools.
+
+Here's how you'd open a new Terminal:
+
+![Opening a terminal](images/opening-a-terminal.gif)
+
+
 ## Chapter 2. Python Language Syntax
 
 Python is an extremely powerful language with many attributes and capabilities
@@ -363,6 +386,8 @@ bits, or swapping from 0 to 1 or from 1 to 0.
 
 ## Chapter 5. If statements
 
+    TODO:  need to complete this.
+
 ## Chapter 6. Loops
 
 ## Chapter 7. File I/O
@@ -421,7 +446,7 @@ character value.
      31  US  (unit separator)            63  ?         95  _        127  DEL
 
 So any letter in the alphabet can be represented by a numeric value. For example,
-capital B s 66 while a lowercase I is 105.
+a capital `B` is 66 while a lowercase `m` is 109.
 
 ## Chapter 10. Hashing and Encryption
 
@@ -465,22 +490,34 @@ you produce readable text that makes some sense and does not appear jumbled.
 
 ## Chapter 11. The Secret.in file
 
-Download the [Secret.in](Secret.in) file. This file contains the encrypted
-information that you must decode. If you open it in notepad (or any other text
-editor) it looks like rows and rows of numbers. The secret text you are trying
-to decode is hidden from plain view by encoding the letters of the text into
-numbers so that they cannot be read without decoding them with the same routine
-that was used to encode them.
+Download the [Secret.in](Secret.in) file. There are a couple ways you can access
+this file.
+
+1. Run this command in you CS50 IDE terminal:
+
+    wget https://raw.githubusercontent.com/Tech901/code-precourse-challenge/master/tutorial/Secret.in
+
+2. You can download the file to your local computer, then drag &amp; drop it
+   into the CS50 IDE:
+
+
+![Upload Secret.in to CS50 IDE](images/uploading-secret-file.gif)
+
+
+This file contains the encrypted information that you must decode. If you open
+it in notepad (or any other text editor) it looks like rows and rows of numbers.
+The secret text you are trying to decode is hidden from plain view by encoding
+the letters of the text into numbers so that they cannot be read without
+decoding them with the same routine that was used to encode them.
 
 In the `Secret.in` file, each letter, space, and punctuation are represented by
 a 3-digit code. The first 3 numbers, 183, represent the first letter of the message.
 The next 3 numbers, 139, represent the next letter, and so on and so on through
 the end of the file. In the chapter on [Hashing and Encryption](#chapter-10-hashing-and-encryption),
 we explained how to decode these numbers so that the secret text can be read.
-Be careful not to save over or modify the `Secret.in` file as that could
-scramble the code. If you think you may have altered it, you can always download
+**Be careful not to save over or modify the `Secret.in` file as that could
+scramble the code.** If you think you may have altered it, you can always download
 it again.
-
 
 ## Chapter 12. The Results.out file
 
