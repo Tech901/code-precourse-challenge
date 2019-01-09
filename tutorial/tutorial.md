@@ -386,13 +386,175 @@ bits, or swapping from 0 to 1 or from 1 to 0.
 
 ## Chapter 5. If statements
 
-    TODO:  need to complete this.
+Python allows us to ask Yes or No questions, based on the value contained
+in a variable, the result of a calculation, or some other expression. This
+generall takes the form of an `if` statement.
+
+Here's an example that tells us if the value stored in an integer variable is
+equal to 42.
+
+    some_value = 3
+    if some_value == 42:
+        print("Yes! This value is equal to 42")
+
+In this example, the answer to our question is, "No". Sometimes we may also
+want to perform an action if that's the case. We can use an `else` clause for
+that scenario:
+
+    some_value = 3
+    if some_value == 42:
+        print("Yes! This value is equal to 42")
+    else:
+        print("No! It's not 42 :(")
+
+
+We may also want to ask a subsequent question; for example: Is the value
+equal to 42, and if not, is it equal to zero? We can use the `elif` clause
+for this.
+
+
+    some_value = 3
+    if some_value == 42:
+        print("Yes! This value is equal to 42")
+    elif some_value == 0:
+        print("No, but the value is ZERO")
+    else:
+        print("No! It's not 42 :(")
+
+You can continue to ask questions using `if`, `elif`, and `else` throughout
+your program, and you can even nest these questions inside other constructs
+(like loops).
 
 ## Chapter 6. Loops
 
+Computer programs are very good at doing things over and over very quickly. One
+way to do this is to perform a loop. Python has two main looping constructs.
+
+### while loops
+
+The `while` loop is often used to perform a task until some criteria, or condition
+evaluates to false. For example, we can write code that prints all of the
+integers from 0 to 10:
+
+    num = 0
+    while num <= 10:
+        print("num = ", num)
+        num += 1
+
+Notice that we have code that does the following:
+
+1. We create a `num` variable whose value is zero.
+2. We construct a while loop; The *condition* is the expression: `num <= 10`. If
+   this expression ever evaluates to False, the body of the while loop will
+   not get executed.
+3. This sarts the body of the while loop: It simply prints the value contained in `num`
+4. Finally, we update the value stored in `num` by adding 1 to it. If we accidentally
+   forgot this step, we would create an *infinite loop*. That's because the last
+   two lines of code are in the *body* of the loop, and the while loop will execute
+   as long as `num <= 10` evaluates to True. If we never change the value in `num`
+   (which is currently zero), this code will run forever.
+
+
+### for loops
+
+The other looping construct in Python, is the `for` loop. It is typically used
+when you have a collection of objects or values on which you want to perform
+an action.
+
+Assume that we have a string, and we want to print every character in the
+string individually. Here's an exmaple that will do that:
+
+    greeting = "Hello World!"
+    for character in greeting:
+        print(character)
+
+This code will print every character in the `greeting` variable on a separate
+line. In this case, our `greeting` is a collection of characters.
+
+Here's an example that prints ONLY the even numbers in a collection of integers:
+
+    values = [1, 2, 3, 4, 5, 6, 7, 8]
+    for num in values:
+        if num % 2 == 0:
+            print(num, " is even!")
+
+In this example, we've combined both a `for` loop and an `if` statement to
+inspect every item in a list of integers, but only perform an action if some
+calculation is true!  (`num % 2 == 0`  means num *mod* 2 -- or divide by w and
+check if there is no (0) remainder).
+
 ## Chapter 7. File I/O
 
+Python makes it relatively easy to read from and write to files. The built-in
+`open` function allows you to open a file. It returns a file object, which
+includes methods for reading and writing.
+
+    f = open(filename, mode)
+
+However, when using open, we need to specify what *mode* we want to use when
+opening the file. The most common modes are:
+
+- `'r'` when the file will only be read
+- `'w'` for only writing (an existing file with the same name will be erased)
+- `'a'` opens the file for appending
+
+Examples of reading and writing to a file are shown below:
+
+    f = open("something.txt")  # if you omit the mode, the default is 'r'
+    content = f.read()  # read the entire file and store it's contents as a string
+    f.close()  # it's a good practice to close the file when you no longer need it.
+
+
+    f = open("something.txt", "w')  # open the file for writing (this will create
+                                    # a new file if it doesn't exist, and will
+                                    # erase the contents of an existing file).
+    f.write("Hello World!")  # we can write a string to a file.
+    f.close()  # and close it when we're finished.
+
+You can learn more about file i/o at
+[the official python documentation](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+
 ## Chapter 8. Conversion Functions
+
+There are a number of times when you may need to convert a variable from one
+data type to another. There are built-in conversion functions that will do this
+for you.
+
+For example, you may have a *string* that contains numeric information. You'll
+need to convert that to an integer using the `int()` function before you could
+perform any arithmetic on that data. Here's an exmple:
+
+    data = "123"  # This is a string.
+    data = int(data)  # The int() function converts it to an integer
+    data = data + 1
+    print(data)  # should print: 124
+
+Likewise, you could convert an integer (or nearly any other type of data) into
+a string using the `str()` function:
+
+    n = 5  # this is an integer (notice the lack of quotes)
+    n = str(n)  # we've not converted it to a string: "5"
+
+    # now you can perform operations that expect a string:
+    message = "I have " + n + " apples"
+    print(message)  # would print "I have 5 apples"
+
+
+Finally, to complete the exercise below, you will need to make use of two functions
+that allow us to convert between a character and an integer value representing
+that character's ASCII code (see the next chapter).
+
+- `chr()` will convert an integer into it's corresponding character.
+- `ord()` will convert a character into it's corresponding ascii code.
+
+For example:
+
+    value = chr(65)
+    print(value)  # this would print 'A'
+
+    value = ord('a')
+    print(value)  # this would print 97
+
 
 ## Chapter 9. ASCII table
 
