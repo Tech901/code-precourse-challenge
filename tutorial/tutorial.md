@@ -61,8 +61,18 @@ click on the link they sent you in order to continue using edX.
 
 ### Part 2: Set up your CS50 IDE (programming environment)
 
+**NOTE: The CS50 IDE has recently changed, and the following instructions may
+be a little out of date. We're working to get them updated soon. In the meantime,
+you should be able to:**
+
+1. Create an accout at [GitHub](https://github.com).
+2. Then, log into [ide.cs50.io](https://ide.cs50.io) with your github account.
+
+----
+
+<!--
 Next, we'll set up the programming environment that you'll use throughout the
-course. Visit [CS50.io](https://cs50.io), and choose to login with your edX
+course. Visit [ide.CS50.io](https://ide.cs50.io), and choose to login with your edX
 credentials. This is important! You will use your edX username/password to
 log into the CS50 IDE.
 
@@ -72,6 +82,7 @@ You will then be redirected to edX.org, and asked to Authorize cs50. Select the
 "Allow" button:
 
 ![Authorize cs50](images/authorize-edx.jpg)
+-->
 
 **Congrats!** You now have access to the CS50 IDE, which powered by a service
 called AWS Cloud9.
