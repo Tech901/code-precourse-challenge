@@ -968,7 +968,7 @@ look something like this...
     results = open("Results.out", "w")  # open file Results.out for writing
     i = 0  # initialize the iterator variable to 0
     while i < len(coded_text):  # set up while loop using i to work through coded_text
-        slice_var = codedtext[i:i+3]  # slice_var holds 3 chars of coded_text at a time
+        slice_var = coded_text[i:i+3]  # slice_var holds 3 chars of coded_text at a time
         int_var = int(slice_var)  # convert to an integer,
         int_var = (int_var ^ 99)  # XOR with 99
         int_var = int_var – 128  # subtract 128
@@ -997,7 +997,7 @@ comments and you should understand the reversible routine from above.
         int_var = ord(slice_var) # converts the character into an ASCII integer value
         int_var = int_var + 128  # add 128 ASCII code
         int_var = (int_var ^ 99) # XOR with 99 and store in int_var
-        chr_var = str(intvar)  # convert the integer value into a string
+        chr_var = str(int_var)  # convert the integer value into a string
         coded_text = coded_text + chr_var  # append the encoded string to our coded_text
         i = i + 1 # increment the counter before next loop
 
