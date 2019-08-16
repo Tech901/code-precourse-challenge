@@ -377,6 +377,23 @@ Assume variable `a` contains the value 10 and variable `b` contains the value 20
 - `/=` **Compound division**: `a /= 2` would result in `a` containing the value
   5, which is the same as `a = a / 2`.
 
+#### Logical Operators
+
+Python's logical operators let you combine boolean (True or False) expressions;
+they include:
+
+- `and` **Logical AND** lets you ask if two expressions are BOTH True.
+- `or` **Logical OR** lets you ask if either of two expressions are True (but
+  not necessarily both)
+- `not` **Logical NOT** allows you to negate an expression.
+
+Here are some examples, assuming that `a` contains the value 10 and `b` contains
+the value 20, then:
+
+- `a == 10 and b == 20` would be True.
+- `a == 10 and b == 1000` would be False because the right-hand expression (`b == 1000` is False)
+- `a == 10 or b == 1000` would be True because one of the expressions (`a == 10`) is True
+- `not a == 1000` would be True, because `a == 1000` is False, but the `not` operator flips this to True.
 
 #### Bitwise Operators
 
