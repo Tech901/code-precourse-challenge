@@ -702,12 +702,20 @@ you produce readable text that makes some sense and does not appear jumbled.
 Download the [Secret.in](Secret.in) file. There are a couple ways you can access
 this file.
 
-1. Run this command in you CS50 IDE terminal:
+One option is to run the followwing command in you CS50 IDE terminal. This will
+fetch the file from github:
 
     wget https://raw.githubusercontent.com/Tech901/code-precourse-challenge/master/tutorial/Secret.in
 
-2. You can download the file to your local computer, then drag &amp; drop it
-   into the CS50 IDE:
+
+Another option is a) create a file named `Secret.in` in your CS50 IDE, then open
+[this link]( https://raw.githubusercontent.com/Tech901/code-precourse-challenge/master/tutorial/Secret.in),
+and copy and paste the content into your file. Don't forget to save it!
+
+
+
+Finally, you can download the file to your local computer, then drag &amp; drop it
+into the CS50 IDE:
 
 
 ![Upload Secret.in to CS50 IDE](images/uploading-secret-file.gif)
