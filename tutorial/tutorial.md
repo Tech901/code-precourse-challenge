@@ -1059,7 +1059,9 @@ To download your files from the CS50 IDE, **right-click** on `Results.out` in
 the File Pane, then select the Download option. This should transfer the file
 to your computer from the CS50 IDE. Do the same with your `precourse.py` file.
 
-Send the email to: [mailto:Code1support@tech901.org](Code1support@tech901.org).
+![Downloading your files](images/downloading-your-files.gif)
+
+**Send the email to: [mailto:Code1support@tech901.org](Code1support@tech901.org).**
 
 The subject line should say “Code1.0 Pre-Course Assignment Results.out”. In the
 body of the email please tell us what you thought of the assignment and give us
