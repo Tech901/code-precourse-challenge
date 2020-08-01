@@ -39,12 +39,12 @@ we'll use the online CS50 IDE environment to write and run our code.
 
 ### Part 1: Enroll in the CS50 course on edX.org
 
-To get started, [Enroll in the the CS50x course at edX.org](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x).  Look for the big blue "Enroll" button:
+To get started, [Enroll in the the CS50x course at edX.org](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x).  Look for the big "Enroll" button:
 
 ![Enroll](images/enroll.jpg)
 
 You will then need to create an account for edX.org. Remember this, as you'll
-need it to log into the course.
+need it to log into the course later.
 
 ![Sign Up for edX](images/sign-up.jpg)
 
@@ -767,8 +767,10 @@ write your program on your own. There are many possible solutions to this assign
 What follows is just one possible solution, and it's here if you need a bit of help.
 
 
+<div style="border:1px solid #cc0; background-color: #ffb; padding: 1em;">
 **Disclaimer** There may be one or two small mistakes in the example code below.
 See if you can catch them!
+</div>
 
 ### Let's review the challenge instructions
 
@@ -1042,6 +1044,9 @@ You most likely have successfully completed the challenge.
 
 
 ## Chapter 14. Sending your results to us
+
+
+<div style="border:1px solid #cc0; background-color: #ffb; padding: 1em;">Please read these instructions carefully.</div>
 
 Once you have completed the assignment and created the `Results.out` file,
 create an email and attach your `Results.out` file and your `precourse.py` to
