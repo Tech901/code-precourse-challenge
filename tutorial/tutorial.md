@@ -61,28 +61,12 @@ click on the link they sent you in order to continue using edX.
 
 ### Part 2: Set up your CS50 IDE (programming environment)
 
-**NOTE: The CS50 IDE has recently changed, and the following instructions may
-be a little out of date. We're working to get them updated soon. In the meantime,
-you should be able to:**
+In order to log into the CS50 IDE, you must first create a GitHub account. If
+you already have a GitHub account, you can use it to log into the CS50 IDE.
 
-1. Create an accout at [GitHub](https://github.com).
-2. Then, log into [ide.cs50.io](https://ide.cs50.io) with your github account.
+1. Create an accout at [GitHub](https://github.com) / *OR* use your existing account.
+2. Then, log into [ide.cs50.io](https://ide.cs50.io) with your GitHub account.
 
-----
-
-<!--
-Next, we'll set up the programming environment that you'll use throughout the
-course. Visit [ide.CS50.io](https://ide.cs50.io), and choose to login with your edX
-credentials. This is important! You will use your edX username/password to
-log into the CS50 IDE.
-
-![CS50io login](images/cs50ide-login.jpg)
-
-You will then be redirected to edX.org, and asked to Authorize cs50. Select the
-"Allow" button:
-
-![Authorize cs50](images/authorize-edx.jpg)
--->
 
 **Congrats!** You now have access to the CS50 IDE, which powered by a service
 called AWS Cloud9.
@@ -111,6 +95,14 @@ still have access to all the tools.
 Here's how you'd open a new Terminal:
 
 ![Opening a terminal](images/opening-a-terminal.gif)
+
+
+#### Check out this video for more info.
+
+This brief video shows how to navigate the CS50 IDE, how to work in the python
+shell, and how to execute a simple python program.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iVuno7WHNTY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ## Chapter 2. Python Language Syntax
