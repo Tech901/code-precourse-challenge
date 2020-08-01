@@ -99,10 +99,8 @@ Here's how you'd open a new Terminal:
 
 #### Check out this video for more info.
 
-This brief video shows how to navigate the CS50 IDE, how to work in the python
-shell, and how to execute a simple python program.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iVuno7WHNTY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[This brief video](https://youtu.be/iVuno7WHNTY) shows how to navigate the CS50
+IDE, how to work in the python shell, and how to execute a simple python program.
 
 
 ## Chapter 2. Python Language Syntax
